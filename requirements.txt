@@ -1,0 +1,4 @@
+PyGithub==1.14.2
+pylint==0.27.0
+requests==1.2.0
+envoy==0.0.2
