@@ -4,7 +4,8 @@ glint
 Lint checking on pull requests.
 
 Currently the following file types are supported:
-- Python
+- Python - using [pylint](http://www.pylint.org/)
+- Javascript - using [jshint](http://www.jshint.com/)
 
 Run the following command to comment on the commit:
 ```
