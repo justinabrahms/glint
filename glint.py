@@ -45,6 +45,16 @@ def do_pylint(fle, temp_file, pull, commit):
             line=int(line_num))
 
 
+def do_jshint(fle, temp_file, pull, commit):
+    import pdb; pdb.set_trace()
+    filename = fle.filename
+    cmd = u'jshint --reporter=reporter.js {0}'.format(temp_file.name)
+    result = envoy.run(cmd)
+    
+    newline_stripped = result.std_out.replace(u'\n', u'')
+    
+
+
 def do_lint(g, repo_name, pull_number, credentials):
     repo = g.get_repo(repo_name)
 
@@ -76,6 +86,8 @@ def do_lint(g, repo_name, pull_number, credentials):
             name = ACCEPTABLE_TYPES_CHOICES[file_type[0]]
             if name == 'python':
                 do_pylint(fle, temp_file, pull, commit)
+            elif name == 'javascript':
+                do_jshint(fle, temp_file, pull, commit)
 
         os.remove(temp_file.name)
 
