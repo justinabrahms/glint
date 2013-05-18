@@ -19,7 +19,13 @@ pip install -r requirements.txt
 npm install -g jshint
 ```
 
-Run the following command to comment on the commit:
+Run the following command glint the pull request:
 ```
 python glint.py --repo_name="OWNER/REPO" --pull=PULL_NUM --github-username="USERNAME" --github-password="PASSWORD"
+```
+
+Optionally you can glint on a comma seperated list of files:
+
+```
+--filenames="file1.txt,file2.txt"
 ```
