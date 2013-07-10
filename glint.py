@@ -13,15 +13,12 @@ from github import Github
 logging.basicConfig()
 log = logging.getLogger(__name__)
 
-ACCEPTABLE_TYPES = (
-    u'text/x-python',
-    u'application/javascript'
-)
-
 ACCEPTABLE_TYPES_CHOICES = {
     u'text/x-python': u'python',
     u'application/javascript': u'javascript'
 }
+
+ACCEPTABLE_TYPES = ACCEPTABLE_TYPES_CHOICES.keys()
 
 
 def create_comment(commit, body, filename, line_num):
